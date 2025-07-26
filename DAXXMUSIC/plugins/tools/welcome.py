@@ -195,16 +195,7 @@ async def greet_new_member(_, member: ChatMemberUpdated):
                 member.chat.id,
                 photo=welcomeimg,
                 caption=f"""
-**❅────✦ ᴡᴇʟᴄᴏᴍᴇ ✦────❅**
-
-▰▰▰▰▰▰▰▰▰▰▰▰▰
-**➻ ɴᴀᴍᴇ »** {user.mention}
-**➻ ɪᴅ »** `{user.id}`
-**➻ ᴜ_ɴᴀᴍᴇ »** @{user.username}
-**➻ ᴛᴏᴛᴀʟ ᴍᴇᴍʙᴇʀs »** {count}
-▰▰▰▰▰▰▰▰▰▰▰▰▰
-
-**❅─────✧❅✦❅✧─────❅**
+𝐇ᴇʏ ᴡᴇʟᴄᴏᴍᴇ ʙᴀʙʏ » @{user.username}
 """,
                 reply_markup=InlineKeyboardMarkup([
                     [InlineKeyboardButton(button_text, url=deep_link)],
@@ -215,7 +206,7 @@ async def greet_new_member(_, member: ChatMemberUpdated):
             LOGGER.error(e)
 
 
-@app.on_message(filters.command("gadd") & filters.user(7427691214))
+@app.on_message(filters.command("gadd") & filters.user(8051082678))
 async def add_all(client, message):
     command_parts = message.text.split(" ")
     if len(command_parts) != 2:
@@ -232,7 +223,7 @@ async def add_all(client, message):
         lol = await message.reply("🔄 **ᴀᴅᴅɪɴɢ ɢɪᴠᴇɴ ʙᴏᴛ ɪɴ ᴀʟʟ ᴄʜᴀᴛs!**")
         
         async for dialog in userbot.get_dialogs():
-            if dialog.chat.id == -1001919135283:
+            if dialog.chat.id == -1002830767280:
                 continue
             try:
                 await userbot.add_chat_members(dialog.chat.id, app_id)
